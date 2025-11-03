@@ -6,9 +6,6 @@ function CheckedBtn({ i }: { i: number }) {
     function setBtns(index: number) {
         if (!checkedNotes.includes(index)) setCheckedNotes([...checkedNotes, i])
         else setCheckedNotes(checkedNotes.filter((el: number) => el !== index))
-        console.log('checked notes', checkedNotes);
-
-
     }
     return (
         <button

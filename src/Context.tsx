@@ -39,7 +39,7 @@ export const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const [filteredData, setFilteredData] = useState<DataType[]>([])
 
     const [addInputValue, setAddInputValue] = useState<string>('')
-    const [activeModal, setActiveModal] = useState<boolean>(true);
+    const [activeModal, setActiveModal] = useState<boolean>(false);
 
     const [checkedNotes, setCheckedNotes] = useState<number[]>([])
     const [notesType, setNotesType] = useState<boolean | null>(null)

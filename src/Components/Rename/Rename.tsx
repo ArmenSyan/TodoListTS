@@ -3,9 +3,7 @@ import { useFilter } from "../../CustomHook"
 function Rename() {
     const {newNotesInputValue, setNewNotesInputValue} = useFilter()
     function setVal(e: React.ChangeEvent<HTMLInputElement>){
-        setNewNotesInputValue(e.target.value)
-        console.log(newNotesInputValue);
-        
+        setNewNotesInputValue(e.target.value)        
     }
   return (
     <>
