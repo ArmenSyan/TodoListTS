@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import AddTodoBtn from "./Components/Add/AddTodoBtn"
 import Header from "./Components/Header/Header"
 import NoteModal from "./Components/Modals/NoteModal"
@@ -8,7 +8,21 @@ import { useFilter } from "./CustomHook"
 import { DataType } from "./Context"
 
 function App() {
-  const { activeModal, data, searchInputValue, filteredData, setFilteredData, darkMode } = useFilter()
+
+  const { activeModal, data, searchInputValue, setFilteredData, darkMode } = useFilter()
+  const [isData, setIsData] = useState<boolean>(false);
+
+  useEffect(() => {
+    const savedData = localStorage.getItem("todos");
+    if (!savedData) {
+      setIsData(false);
+      return;
+    }
+
+    const parsed = JSON.parse(savedData);
+    setIsData(parsed.length > 0);
+  }, [data]);
+
   useEffect(() => {
     const filtered: DataType[] = data.filter((note: DataType) => {
       const text = note.name.toLowerCase()
@@ -26,7 +40,7 @@ function App() {
       <div className="flex flex-col justify-start   items-center w-[750px] h-[100vh]  relative  ">
         <Header />
         <AddTodoBtn />
-        {filteredData.length > 0 ? <Todos /> : <NotFound />}
+        {isData ? <Todos /> : <NotFound />}
         {activeModal && <NoteModal />}
       </div>
 
