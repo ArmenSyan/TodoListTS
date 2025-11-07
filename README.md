@@ -28,9 +28,16 @@
 
 ---
 
-## 🧩 Installation & Setup
+## 👨‍💻 Author
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/ArmenSyan/TodoListTS.git
+**Armen Sahakyan**
+Frontend Developer | React & Firebase Enthusiast
+
+🌐 [Upwork Profile](https://www.upwork.com/freelancers/~017ebd34d9e3ccacc1)
+✉️ [mail](armen.sahakyan.ait@gmail.com)
+💻 [GitHub](https://github.com/ArmenSyan)
+
+
+
+<p align='center'>⭐ If you like this project, give it a star on GitHub!</p>
 
